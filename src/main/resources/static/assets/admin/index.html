@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Java 6 Store Administration</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body class="container" ng-app="admin-app">
+
+	<header class="row">
+		<h2 class="alert alert-success">Quản trị Trang web</h2>
+	</header>
+	<div class="row">
+		<nav class="navbar navbar-inverse" style="font-variant: small-caps;">
+			<div class="container-fluid">
+
+				<ul class="nav navbar-nav">
+					<li><a href="/product/list" class="glyphicon glyphicon-home" th:text="#{nav.home}">Trang
+							chủ</a></li>
+					<li><a href="#!product" class="glyphicon glyphicon-th-large">QUẢN
+							LÝ SẢN PHẨM</a></li>
+					<li><a href="#!account" class="glyphicon glyphicon-cog">QUẢN
+							LÝ TÀI KHOẢN</a></li>
+					<li><a href="#!authorize" class="glyphicon glyphicon-pencil">Ủy
+							quyền</a></li>
+					<li><a href="/security/logoff"
+						class="glyphicon glyphicon-log-out">ĐĂNG XUẤT</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<main>
+		<p class="ng-view" />
+	</main>
+	<footer>
+		<div class="panel panel-default" style="background-color: aqua">
+			<div class="panel-body text-center">
+				<ul>
+					<li class="contact-1">305E - Nguyễn Văn Linh - Ninh Kiều - Cần
+						Thơ</li>
+					<li class="contact-2">0828937654( Zalo)</li>
+					<li class="contact-4">hotro@ShopNDT.com</li>
+					<li class="contact-5"><a href="">www.ShopNDT.com</a></li>
+
+				</ul>
+			</div>
+		</div>
+	</footer>
+	<script src="/assets/admin/admin-app.js"></script>
+	<script src="/assets/admin/product/product-ctrl.js"></script>
+	<script src="/assets/admin/authority/authority-ctrl.js"></script>
+	<script src="/assets/admin/account/account-ctrl.js"></script>
+</body>
+</html>

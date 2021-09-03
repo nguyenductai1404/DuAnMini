@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="dynamic(main)">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Đức Tài</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="shortcut icon" href="/assets/images/tai1.jpg">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<link href="/assets/css/shopping-cart-app.css" rel="stylesheet" />
+
+</head>
+
+<body class="container" ng-app="shopping-cart-app"
+	ng-controller="shopping-cart-ctrl">
+	<header class="row">
+		<h1 class="alert alert-success">
+			<img alt="" src="/assets/images/tai1.jpg" width="100px"
+				height="100px"> CỬA HÀNG THỜI TRANG VÀ THIẾT BỊ ĐỨC TÀI
+		</h1>
+
+	</header>
+	<nav class="row">
+		<div th:replace="/layout/_menu.html"></div>
+	</nav>
+	<div class="row" style="background-color: LightGray">
+		<article class="col-sm-9">
+			<div th:replace="${main}"></div>
+		</article>
+		<aside class="col-sm-3">
+			<div th:replace="/layout/_cart-info.html"></div>
+			<div th:replace="/layout/_category.html"></div>
+		</aside>
+	</div>
+	<footer>
+		<div class="panel panel-default" style="background-color: aqua">
+			<div class="panel-body text-center">
+				<p>Giờ Mở Cửa: 8:30 - 21:00 (Mỗi Ngày)</p>
+				<div class="footer-contact">
+					<ul>
+						<li class="contact-1">305E - Nguyễn Văn Linh - Ninh Kiều -
+							Cần Thơ</li>
+						<li class="contact-2">0828937654( Zalo)</li>
+						<li class="contact-4">hotro@ShopNDT.com</li>
+						<li class="contact-5"><a href="">www.ShopNDT.com</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+
+</html>

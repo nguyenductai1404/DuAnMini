@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="h">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<div class="panel-title">
+						<span class="glyphicon glyphicon-edit"></span> Đổi mật khẩu
+					</div>
+				</div>
+				<div class="panel-body">
+
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label>Tên đăng nhập</label>
+							<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label>Mật khẩu cũ</label> <input class="form-control"
+								type="password" ng-model="form.password" required>
+						</div>
+						<div class="form-group col-sm-6">
+							<label>Mật khẩu mới</label> <input class="form-control"
+								type="password" ng-model="form.newPass" required>
+						</div>
+						<div class="form-group col-sm-6">
+							<label>Nhập lại mật khẩu</label> <input class="form-control"
+								type="password" ng-model="form.confirm" required>
+						</div>
+					</div>
+					<div>
+						<div class="row">
+							<div class="form-group col-sm-12">
+								<br>
+								<button ng-click="doimk()" class="btn btn-login" >
+									<span class="glyphicon glyphicon-retweet" ></span> Đổi mật khẩu
+								</button>
+								<button class="btn btn-login">
+									<span class="glyphicon glyphicon-floppy-remove"></span> Hủy
+								</button>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="panel-footer">Vui lòng nhập đầy đủ thông tin</div>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

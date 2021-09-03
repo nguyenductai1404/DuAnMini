@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="panel panel-primary">
+			<div class="panel-heading" th:text="#{nav.your}">ĐƠN HÀNG CỦA BẠN ĐÃ MUA</div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th th:text="#{nav.no}">STT.</th>
+						<th th:text="#{nav.orderid}">Id đơn hàng.</th>
+						<th th:text="#{nav.orderdate}">Ngày đặt hàng</th>
+						<th th:text="#{nav.address}">Địa chỉ nhận hàng</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="order,state:${orders}">
+						<td>[[${state.index}]]</td>
+						<td>[[${order.id}]]</td>
+						<td>[[${order.createDate}]]</td>
+						<td>[[${order.address}]]</td>
+						<td><a th:href="@{|/order/detail/${order.id}|}"
+							class="btn btn-default"> <b
+								class="glyphicon glyphicon-search"></b>
+						</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</main>
+</body>
+</html>

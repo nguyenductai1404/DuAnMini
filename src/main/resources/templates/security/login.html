@@ -1,0 +1,45 @@
+<div xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+	<main>
+		<form th:action="@{/security/login}" method="post"
+			class="col-sm-8 col-sm-offset-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">ĐĂNG NHẬP MUA HÀNG</div>
+				<div class="panel-body">
+					<div class="form-group">
+						<div>TÊN ĐĂNG NHẬP</div>
+						<input name="username" class="form-control"
+							placeholder="Tên đăng nhập">
+					</div>
+					<div class="form-group">
+						<div>MẬT KHẨU:</div>
+						<input name="password" type="password" class="form-control"
+							placeholder="Mật khẩu" id="myInput"> <input
+							type="checkbox" onclick="myFunction()">Hiện mật khẩu
+					</div>
+					<div class="form-group">
+						<div class="form-control">
+							<label class="checkbox-inline"> <input type="checkbox"
+								name="remember me"> Ghi nhớ tài khoản?
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="panel-footer text-right">
+					<i class="pull-left text-danger" th:text="${message}"></i>
+					<button class="btn btn-success">Đăng nhập</button>
+				</div>
+				<div>
+					Bạn chưa có tài khoản? <a th:href="@{/home/dangky}"
+						class="btn btn-primary">Đăng ký</a>
+				</div>
+				
+					<div class="btn btn-warning">
+						<a th:href="@{/home/quenmatkhau}">Quên mật khẩu?</a>
+					</div>
+				
+				<script src="/assets/js/test.js"></script>
+			</div>
+		</form>
+	</main>
+</div>

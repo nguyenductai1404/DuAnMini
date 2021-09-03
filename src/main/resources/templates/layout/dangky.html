@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{/layout/index :: dynamic(~{::main})}">
+<body>
+	<main>
+		<div class="container">
+			<article class="col-sm-9">
+				<section class="login-block">
+					<div class="h">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div class="panel-title">
+									<span class="glyphicon glyphicon-edit"></span> Đăng ký
+								</div>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="form-group col-sm-6">
+										<label>Tên đăng nhập</label> <input class="form-control"
+											ng-model="form.username">
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Mật khẩu</label> <input class="form-control"
+											type="password" required ng-model="form.password">
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Họ và tên</label> <input class="form-control"
+											type="text" required ng-model="form.fullname">
+									</div>
+									<div class="form-group col-sm-6">
+										<label>Email của bạn</label> <input class="form-control"
+											type="email" name="email" required ng-model="form.email">
+									</div>
+									<div class="form-group col-sm-6">
+										<div>Photo</div>
+										<input type="file" class="form-control" id="image"
+											onchange="angular.element(this).scope().imageChanged(this.files)">
+									</div>
+
+								</div>
+								<div>
+									<div class="row">
+										<div class="form-group col-sm-12">
+											<br>
+											<button class="btn btn-login" ng-click="dangky()">
+												<span class="glyphicon glyphicon-retweet"
+													></span> Xác nhận
+											</button>
+
+											<button class="btn btn-login">
+												<span class="glyphicon glyphicon-floppy-remove"></span> Hủy
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+			</article>
+		</div>
+
+	</main>
+	<script src="/assets/admin/account/account-ctrl.js"></script>
+</body>
+</html>
